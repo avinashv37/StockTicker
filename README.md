@@ -1,0 +1,2 @@
+# StockTicker
+using angular js 
