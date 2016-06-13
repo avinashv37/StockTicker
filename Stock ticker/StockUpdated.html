@@ -1,0 +1,59 @@
+<html>
+<head>
+	<title> Stock </title>
+	
+		 <!-- following are the CDN for JQuery and twitter bootstrap -->
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+		<!-- angular Js minified  -->
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+		<!-- ******************CDN ends********************* -->
+		<script src="stockUpdated.js"></script>
+
+		<!-- style sheet  -->
+		<style type="text/css">
+			
+				/* lg */
+			@media screen and (min-width: 1200px) {
+			    body{
+				   margin: 0;
+					padding: 400;
+					border: 0;
+			    }
+			}
+
+			/* md */
+			@media screen and (min-width: 750px) {
+			    body{
+			        margin: 0;
+					padding: 300;
+					border: 0;
+			    }
+			}
+		</style>
+	</head>
+	<body ng-app="yahooStockApi">
+	<div ng-controller="canvasText" class="container-fluid" align="center">
+	<h1>STOCK TICKER BOARD</h1>
+		<canvas id="paper" width="900" height="100" class='img-responsive' >
+				This page does not display..
+		</canvas>
+		<form name="stockSymbolPrice" id="stocknputForm" class="form-inline" ng-controller="quote">
+			<div id="stockSymbolDiv" class="form-group">
+				<label for="symbol">Stock symbol</label>
+				<input type="text" name="stockSymbol" ng-model="inputSymbol" id="symbol" class="form-control">
+				<input type="submit" name="symbolAdd" ng-click="add()" value="+" class="form-control btn-default">
+				<input type="submit" name="sybolRemove" ng-click="subtract()" value="-" class="form-control btn-default">
+				<p>(-) Deletes from the last entered symbol or the first display</p>
+			</div>
+		</form>
+	</div>
+	</body>
+</html>
